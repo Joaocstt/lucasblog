@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog\Category;
 use App\Models\Blog\Post;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
