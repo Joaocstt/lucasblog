@@ -27,7 +27,7 @@
                     </ol>
                 </nav>
                 <div class="grid lg:grid-cols-2 gap-6">
-                    @if($postsNotRecent->count() == 0)
+                    @if($postsLatest->count() == 0)
                     <h1 class="text-3xl">Nenhuma postagem publicada!</h1>
                     @endif
                     @foreach($postsLatest as $post)
