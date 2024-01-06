@@ -41,7 +41,13 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
             Inertia::share('user', function () {
-                return auth()->user();
+                $user = Auth::user();
+
+                if($user) {
+                    $user->avatar_url = asset('storage/' . $user->avatar);
+                }
+
+                return Auth::user();
             });
             Inertia::share('categories', function () {
                 return Category::all();

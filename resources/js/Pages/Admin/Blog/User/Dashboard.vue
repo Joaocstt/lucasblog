@@ -51,7 +51,7 @@
 
                     </div>
                 </div>
-         
+
                 <div class="flex items-center p-4 rounded-lg shadow-xs bg-gray-800">
                     <div
                         class="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500">
@@ -78,7 +78,7 @@
                             Postagens publicadas
                         </p>
                         <p class="text-lg font-semibold text-gray-300">
-                            {{ props.categories }}
+                            {{ props.postsPublished }}
                         </p>
 
                     </div>
@@ -100,7 +100,8 @@ const props = defineProps({
     posts: Number,
     users: Number,
     categories: Number,
-    pendentPosts: Number
+    pendentPosts: Number,
+    postsPublished: Number,
 })
 
 </script>

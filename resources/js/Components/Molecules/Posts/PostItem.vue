@@ -52,7 +52,6 @@
                                   ]">
                                   <CheckCircleIcon v-if="props.status === 'published'" class="w-5 h-5" />
                                  <MinusCircleIcon v-if="props.status === 'draft'" class="w-5 h-5 text-yellow-300/90" />
-
                               {{ props.status === 'draft' ? 'Pendente' : 'Publicado' }}
 
                             </span>
@@ -62,25 +61,25 @@
 
                           <!-- Dropdown -->
                           <div class="relative ml-[115px] sm:hidden mb-3">
-
                               <Link
                                   class=" rounded-md px-3.5 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-900 sm:block"
                                   :href="route('admin.blog.posts.edit', id)">
                                   <button class="bg-transparent hover:border-gray-600  text-white font-semibold hover:text-white py-2 px-4 border border-gray-800 rounded">
-                            <span class="flex items-center gap-1.5">
-                                <PencilSquareIcon class="w-5 h-5" />
-                                Editar
-                            </span>
+                                    <span class="flex items-center gap-1.5">
+                                        <PencilSquareIcon class="w-5 h-5" />
+                                        Editar
+                                    </span>
                                   </button>
                               </Link>
+
                               <Link
                                   class="rounded-md px-3.5 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-900 sm:block"
                                   :href="route('admin.blog.posts.show',  { id: props.id, slug: props.slug })">
-                                  <button class="bg-transparent hover:border-gray-600  text-white font-semibold hover:text-white py-2 px-4 border border-gray-800  rounded">
-                          <span class="flex items-center gap-1.5">
-                              <EyeIcon class="w-5 h-5" />
-                              Visualizar
-                          </span>
+                                  <button class="mt-4 bg-transparent hover:border-gray-600  text-white font-semibold hover:text-white py-2 px-4 border border-gray-800  rounded">
+                                  <span class="flex items-center gap-1.5">
+                                      <EyeIcon class="w-5 h-5" />
+                                      Visualizar
+                                  </span>
                                   </button>
                               </Link>
 

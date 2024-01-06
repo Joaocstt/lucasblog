@@ -7,22 +7,22 @@
         leave-class="transform translate-x-0"
         leave-to-class="transform -translate-x-full"
     >
-    <aside v-if="useToggle.mobileMenuOpen" class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto  dark:bg-gray-800 md:hidden">
-        <div class="py-4 text-gray-500 dark:text-gray-400">
-            <a class="ml-6 text-lg font-bold text-gray-800" href="#">Painel de Admin</a>
-            <ul class="mt-6">
-                <DashboardItem :icon="'HomeIcon'"/>
-            </ul>
-            <ul>
-                <UserItem v-if="$page.props.permission" :icon="'UserIcon'" />
-                <ItemSubMenu :icon="'ClipboardDocumentListIcon'" :is-active="'admin.blog.*'">
-                    <SubMenuItem :link="route('admin.blog.posts.index')" :is-active="'admin.blog.posts.*'" :description="'Ver Postagens'"/>
-                    <SubMenuItem :link="route('admin.blog.categories.index')" :is-active="'admin.blog.categories.*'" :description="'Ver Categorias'"/>
-                </ItemSubMenu>
+        <aside v-if="useToggle.mobileMenuOpen" class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-gray-800 md:hidden">
+            <div class="py-4 text-gray-400">
+                <a class="ml-6 text-lg font-bold text-gray-200" href="#">Painel de Admin</a>
+                <ul class="mt-6">
+                    <DashboardItem :icon="'HomeIcon'"/>
+                </ul>
+                <ul>
+                    <UserItem v-if="$page.props.permission" :icon="'UserIcon'" />
+                    <ItemSubMenu :icon="'ClipboardDocumentListIcon'" :is-active="'admin.blog.*'">
+                        <SubMenuItem :link="route('admin.blog.posts.index')" :is-active="'admin.blog.posts.*'" :description="'Ver Postagens'"/>
+                        <SubMenuItem :link="route('admin.blog.categories.index')" :is-active="'admin.blog.categories.*'" :description="'Ver Categorias'"/>
+                    </ItemSubMenu>
 
-            </ul>
-        </div>
-    </aside>
+                </ul>
+            </div>
+        </aside>
     </transition>
 </template>
 <script setup>

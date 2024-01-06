@@ -14,20 +14,19 @@ class DashboardController extends Controller
     public function dashboard()
     {
         if(Auth::user()) {
-            $user = Auth::user();
-            $users = User::query()->count();
+            $total = User::query()->count();
             $posts = Post::query()->count();
             $pendentPosts = Post::query()->where('status','draft')->count();
+            $postsPublished = Post::query()->where('status','published')->count();
             $categories = Category::query()->count();
 
-            return Inertia::render('Admin/Dashboard', [
-                'user' => $user,
-                'users' => $users,
+            return Inertia::render('Admin/Blog/User/Dashboard', [
+                'users' => $total,
                 'posts' => $posts,
+                'pendentPosts' => $pendentPosts,
                 'categories' => $categories,
-                'pendentPosts' => $pendentPosts
+                'postsPublished' => $postsPublished
             ]);
-
         }
 
         return redirect()->route('admin.login');
