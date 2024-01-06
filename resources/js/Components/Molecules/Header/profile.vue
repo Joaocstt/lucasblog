@@ -69,12 +69,9 @@
 </template>
 
 <script setup>
-
     import {ref} from "vue";
-
     const StateProfile = ref(false);
     const toggleProfile = () => {
         StateProfile.value = !StateProfile.value;
     }
-
 </script>
